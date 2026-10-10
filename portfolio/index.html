@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<!--
+  ANIKET'S PORTFOLIO
+  ------------------
+  FILL THESE IN (Ctrl + F to find each one):
+  1. YOUR_SURNAME        -> your surname (or delete it)
+  2. YOUR_COURSE         -> e.g. B.Tech CSE, 2nd Year
+  3. 916204546810        -> your WhatsApp number (91 + number, appears 2 times)
+  4. aniketapsb@gmail.com -> your email (appears 1 time)
+  5. Prices in the SERVICES section, if you want to change them
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aniket Pradhan | Website Developer</title>
+  <meta name="description" content="Aniket builds fast, mobile-friendly websites for local businesses with WhatsApp booking and Google Maps.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card: #161b22;
+      --border: #2a313c;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --main: #4f8cff;
+      --accent: #2ee6a6;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    section { padding: 90px 20px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    h2 { font-size: 2.2rem; text-align: center; margin-bottom: 8px; }
+    h2 span { color: var(--main); }
+    .subtitle { text-align: center; color: var(--muted); margin-bottom: 50px; }
+
+    /* NAVBAR */
+    nav { position: sticky; top: 0; z-index: 10; background: rgba(13,17,23,0.9); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); padding: 15px 20px; }
+    nav .container { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-weight: 800; font-size: 1.4rem; }
+    .logo span { color: var(--accent); }
+    nav ul { list-style: none; display: flex; gap: 28px; }
+    nav a { color: var(--muted); text-decoration: none; font-weight: 500; }
+    nav a:hover { color: var(--text); }
+
+    /* BUTTONS */
+    .btn { display: inline-block; padding: 13px 30px; border-radius: 10px; font-weight: 600; text-decoration: none; transition: 0.25s; }
+    .btn-primary { background: var(--main); color: #fff; }
+    .btn-primary:hover { background: #3a74e0; transform: translateY(-2px); }
+    .btn-outline { border: 2px solid var(--border); color: var(--text); }
+    .btn-outline:hover { border-color: var(--main); }
+    .btn-wa { background: #25d366; color: #fff; }
+    .btn-wa:hover { background: #1fb457; }
+
+    /* HERO */
+    .hero { text-align: center; padding: 130px 20px 110px; background: radial-gradient(circle at top, rgba(79,140,255,0.18), transparent 60%); }
+    .hero .hello { color: var(--accent); font-weight: 600; letter-spacing: 1px; }
+    .hero h1 { font-size: 3.2rem; line-height: 1.2; margin: 12px 0 18px; }
+    .hero h1 span { background: linear-gradient(90deg, var(--main), var(--accent)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .hero p { color: var(--muted); font-size: 1.15rem; max-width: 620px; margin: 0 auto 35px; }
+    .hero-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+
+    /* PROJECTS */
+    .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+    .project { background: var(--card); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; transition: 0.3s; }
+    .project:hover { transform: translateY(-6px); border-color: var(--main); }
+    .preview { height: 170px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 3.5rem; }
+    .preview small { font-size: 1rem; font-weight: 700; margin-top: 5px; }
+    .bakery { background: linear-gradient(135deg, #f6d2a8, #c0632b); color: #3b2416; }
+    .tuition { background: linear-gradient(135deg, #1e4fa3, #3b7be0); color: #ffc83d; }
+    .salon { background: linear-gradient(135deg, #b0476b, #2b1a22); color: #d4af37; }
+    .project-body { padding: 22px; }
+    .project-body h3 { margin-bottom: 6px; }
+    .project-body p { color: var(--muted); font-size: 0.95rem; margin-bottom: 14px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+    .tags span { font-size: 0.78rem; background: rgba(79,140,255,0.12); color: var(--main); padding: 4px 10px; border-radius: 20px; }
+    .project .btn { padding: 10px 22px; font-size: 0.95rem; }
+
+    /* SERVICES */
+    .services { background: #0a0e13; }
+    .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
+    .plan { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 32px 26px; position: relative; }
+    .plan.popular { border: 2px solid var(--main); }
+    .plan .label { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: var(--main); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 4px 14px; border-radius: 20px; }
+    .plan h3 { font-size: 1.25rem; }
+    .plan .price { font-size: 2rem; font-weight: 800; margin: 10px 0 18px; }
+    .plan .price span { font-size: 0.9rem; font-weight: 400; color: var(--muted); }
+    .plan .price .old { display: block; font-size: 1rem; font-weight: 500; color: var(--muted); text-decoration: line-through; margin-bottom: -6px; }
+    .offer { text-align: center; margin: -25px auto 45px; max-width: 420px; background: rgba(46,230,166,0.1); border: 1px solid var(--accent); color: var(--accent); font-weight: 600; padding: 10px 18px; border-radius: 30px; }
+    .plan ul { list-style: none; }
+    .plan li { color: var(--muted); padding: 6px 0; }
+    .plan li::before { content: "✓ "; color: var(--accent); font-weight: 700; }
+
+    /* PROCESS */
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; text-align: center; }
+    .step .num { width: 55px; height: 55px; border-radius: 50%; background: rgba(46,230,166,0.12); color: var(--accent); font-weight: 800; font-size: 1.3rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; }
+    .step h3 { font-size: 1.1rem; margin-bottom: 5px; }
+    .step p { color: var(--muted); font-size: 0.95rem; }
+
+    /* ABOUT */
+    .about { background: #0a0e13; }
+    .about-box { max-width: 750px; margin: 0 auto; text-align: center; }
+    .about-box p { color: var(--muted); font-size: 1.05rem; margin-bottom: 25px; }
+    .skills { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+    .skills span { background: var(--card); border: 1px solid var(--border); padding: 7px 16px; border-radius: 8px; font-size: 0.9rem; }
+
+    /* CONTACT */
+    .contact { text-align: center; }
+    .contact p { color: var(--muted); margin-bottom: 30px; }
+    .contact .hero-buttons { margin-bottom: 10px; }
+
+    footer { text-align: center; padding: 25px; color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--border); }
+
+    .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; width: 58px; height: 58px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.7rem; text-decoration: none; box-shadow: 0 4px 14px rgba(0,0,0,0.4); z-index: 20; }
+
+    @media (max-width: 700px) {
+      nav ul { display: none; }
+      .hero h1 { font-size: 2.2rem; }
+      h2 { font-size: 1.8rem; }
+      section { padding: 70px 20px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="container">
+      <div class="logo">Aniket<span>.</span></div>
+      <ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#services">Pricing</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <p class="hello">👋 Hi, I'm Aniket Pradhan</p>
+    <h1>I build websites that bring<br><span>customers to your business</span></h1>
+    <p>Fast, mobile-friendly websites for shops, tuition centres, salons and clinics, with WhatsApp booking and Google Maps built in.</p>
+    <div class="hero-buttons">
+      <a href="#work" class="btn btn-primary">See My Work</a>
+      <a href="https://wa.me/916204546810?text=Hi%20Aniket%2C%20I%20want%20a%20website%20for%20my%20business" target="_blank" class="btn btn-wa">💬 WhatsApp Me</a>
+    </div>
+  </header>
+
+  <!-- PROJECTS -->
+  <section id="work">
+    <div class="container">
+      <h2>My <span>Work</span></h2>
+      <p class="subtitle">Live websites. Click to open them on your phone or laptop.</p>
+      <div class="project-grid">
+
+        <div class="project">
+          <div class="preview bakery">🥐<small>Golden Crust</small></div>
+          <div class="project-body">
+            <h3>Golden Crust Bakery</h3>
+            <p>Bakery website with menu, prices, timings and one-tap WhatsApp ordering.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>WhatsApp Orders</span></div>
+            <a href="https://goldencrust-bakery-aniket.netlify.app" target="_blank" class="btn btn-outline">View Live ↗</a>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="preview tuition">🎓<small>Bright Future</small></div>
+          <div class="project-body">
+            <h3>Bright Future Tuition</h3>
+            <p>Coaching centre site with course fees, teacher profiles and a demo-class booking form.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Booking Form</span></div>
+            <a href="https://brightfuture-tuition-aniket.netlify.app" target="_blank" class="btn btn-outline">View Live ↗</a>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="preview salon">✂️<small>Glow Studio</small></div>
+          <div class="project-body">
+            <h3>Glow Studio Salon</h3>
+            <p>Premium salon site with photo gallery, Google Map and appointment booking with date picker.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Google Maps</span></div>
+            <a href="https://glow-salon-aniket1.netlify.app" target="_blank" class="btn btn-outline">View Live ↗</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES / PRICING -->
+  <section id="services" class="services">
+    <div class="container">
+      <h2>Simple <span>Pricing</span></h2>
+      <p class="subtitle">No hidden charges. Domain & hosting help included.</p>
+      <p class="offer">🎉 Launch offer: first 5 clients only</p>
+      <div class="service-grid">
+
+        <div class="plan">
+          <h3>Starter</h3>
+          <p class="price"><span class="old">₹2,999</span>₹1,499 <span>one-time</span></p>
+          <ul>
+            <li>1-page website</li>
+            <li>Mobile-friendly design</li>
+            <li>WhatsApp & call buttons</li>
+            <li>Google Map location</li>
+            <li>Ready in 3 days</li>
+          </ul>
+        </div>
+
+        <div class="plan popular">
+          <span class="label">MOST POPULAR</span>
+          <h3>Business</h3>
+          <p class="price"><span class="old">₹5,999</span>₹2,999 <span>one-time</span></p>
+          <ul>
+            <li>Everything in Starter</li>
+            <li>Photo gallery</li>
+            <li>Booking / enquiry form</li>
+            <li>Services & price list</li>
+            <li>Ready in 5–7 days</li>
+          </ul>
+        </div>
+
+        <div class="plan">
+          <h3>Care Plan</h3>
+          <p class="price"><span class="old">₹499</span>₹299 <span>/ month</span></p>
+          <ul>
+            <li>Price & menu updates</li>
+            <li>New photos & offers</li>
+            <li>Festival banners</li>
+            <li>Quick WhatsApp support</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section>
+    <div class="container">
+      <h2>How It <span>Works</span></h2>
+      <p class="subtitle">From first message to live website</p>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><h3>Message Me</h3><p>Tell me about your business on WhatsApp.</p></div>
+        <div class="step"><div class="num">2</div><h3>Share Details</h3><p>Send your photos, prices, timings and address.</p></div>
+        <div class="step"><div class="num">3</div><h3>Review</h3><p>See a preview and ask for any changes.</p></div>
+        <div class="step"><div class="num">4</div><h3>Go Live</h3><p>Your website is online and ready to share.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="about-box">
+        <h2>About <span>Me</span></h2>
+        <p class="subtitle" style="margin-bottom:20px;">Integrated M.Tech Software Engineering · VIT Vellore</p>
+        <p>
+          I'm a student and web developer who builds clean, affordable websites for local businesses.
+          I focus on what actually brings customers: looking great on phones, loading fast, and making it
+          easy to call, order or book on WhatsApp.
+        </p>
+        <div class="skills">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive Design</span>
+          <span>Netlify</span><span>Google Maps</span><span>WhatsApp Integration</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Let's Build Your <span>Website</span></h2>
+      <p>Free consultation. Reply within a few hours.</p>
+      <div class="hero-buttons">
+        <a href="https://wa.me/916204546810?text=Hi%20Aniket%2C%20I%20want%20a%20website%20for%20my%20business" target="_blank" class="btn btn-wa">💬 WhatsApp Me</a>
+        <a href="mailto:aniketapsb@gmail.com" class="btn btn-outline">✉️ Email Me</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>© 2026 Aniket Pradhan. Built by me, of course. 🙂</footer>
+
+  <a href="https://wa.me/916204546810" target="_blank" class="whatsapp-float" aria-label="WhatsApp">💬</a>
+
+</body>
+</html>
